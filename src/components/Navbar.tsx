@@ -77,7 +77,11 @@ export const Navbar = () => {
       }`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
+        <button
+  type="button"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+  className="flex items-center gap-2 group"
+>
           <span className="font-display text-lg font-bold tracking-tight">
             <span className="text-gradient-primary">{initials}</span>
             <span className="text-foreground">.</span>
