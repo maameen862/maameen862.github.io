@@ -89,7 +89,7 @@ export const Navbar = () => {
           <span className="hidden sm:inline font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             {portfolio.hero.role}
           </span>
-        </a>
+        </button>
 
         <nav className="hidden md:flex items-center gap-1">
           {sections.map((s) => (
