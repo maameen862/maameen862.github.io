@@ -11,7 +11,7 @@ import { Contact, Footer } from "@/components/Contact";
 
 function Home() {
   return (
-    <main id="top" className="min-h-screen">
+    <main id="main" className="min-h-screen">
       <Navbar />
       <Hero />
       <About />
