@@ -82,14 +82,14 @@ export const Navbar = () => {
   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
   className="flex items-center gap-2 group"
 >
-          <span className="font-display text-lg font-bold tracking-tight">
-            <span className="text-gradient-primary">{initials}</span>
-            <span className="text-foreground">.</span>
-          </span>
-          <span className="hidden sm:inline font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            {portfolio.hero.role}
-          </span>
-        </button>
+  <span className="font-display text-lg font-bold tracking-tight">
+    <span className="text-gradient-primary">{initials}</span>
+    <span className="text-foreground">.</span>
+  </span>
+  <span className="hidden sm:inline font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+    {portfolio.hero.role}
+  </span>
+</button>
 
         <nav className="hidden md:flex items-center gap-1">
           {sections.map((s) => (
