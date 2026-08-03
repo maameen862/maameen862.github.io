@@ -1,103 +1,104 @@
 import { motion } from "framer-motion";
-import { usePortfolio } from "@/hooks/usePortfolio";
+import { usePortfolio } from "@/lib/portfolioStore";
 
-const About = () => {
-  const { data } = usePortfolio();
+export const SectionLabel = ({
+  index,
+  label,
+}: {
+  index: string;
+  label: string;
+}) => (
+  <div className="flex items-center gap-3">
+    <span className="font-mono text-[10px] text-primary tracking-[0.25em]">
+      {index}
+    </span>
 
-  if (!data) return null;
+    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+      {label}
+    </span>
+  </div>
+);
 
-  const certifications = data.certifications || [];
+export const About = () => {
+  const portfolio = usePortfolio();
+
+  const certifications = portfolio.certifications ?? [];
 
   return (
-    <section id="about" className="relative py-24">
-      <div className="container mx-auto px-6">
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="py-24 md:py-32 border-t border-hairline"
+    >
+      <div className="container max-w-7xl">
 
-        {/* ABOUT */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">
-              About
-            </span>
-            <div className="h-px flex-1 bg-border" />
-          </div>
+        {/* ABOUT HEADER */}
+        <div className="border-b border-hairline pb-6">
+          <SectionLabel index="01" label="About" />
 
-          <div className="max-w-4xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Data Analyst
-            </h2>
-
-            {data.about && (
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                {typeof data.about === "string"
-                  ? data.about
-                  : data.about.description}
-              </p>
-            )}
-          </div>
+          <h2
+            id="about-heading"
+            className="mt-6 font-display text-5xl md:text-6xl italic leading-none text-foreground"
+          >
+            About
+          </h2>
         </div>
 
         {/* CREDENTIALS */}
-        <div>
-          <div className="flex items-center justify-between gap-4 mb-8">
-            <div className="flex items-center gap-4 flex-1">
-              <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">
-                Credentials
+        {certifications.length > 0 && (
+          <div className="mt-20">
+            <div className="flex items-center gap-6 border-b border-hairline pb-5">
+              <SectionLabel index="02" label="Credentials" />
+
+              <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                {String(certifications.length).padStart(2, "0")} ON FILE
               </span>
-              <div className="h-px flex-1 bg-border" />
             </div>
 
-            <span className="text-muted-foreground font-mono text-xs tracking-[0.2em]">
-              {String(certifications.length).padStart(2, "0")} ON FILE
-            </span>
-          </div>
-
-          {/* 4 CERTIFICATES PER ROW */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert: any, index: number) => (
-              <motion.div
-                key={cert.id || index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.08,
-                }}
-                className="border border-border bg-card overflow-hidden group"
-              >
-                {/* CERTIFICATE IMAGE */}
-                <div className="aspect-[4/3] bg-white overflow-hidden">
-                  <img
-                    src={cert.image}
-                    alt={cert.name}
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-                    loading="lazy"
-                  />
-                </div>
-
-                {/* CERTIFICATE DETAILS */}
-                <div className="p-5 border-t border-border">
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono text-xs tracking-[0.2em] text-primary">
-                      CERT {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">
-                      VERIFIED
-                    </span>
+            {/* 4 CERTIFICATES SIDE BY SIDE */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {certifications.map((cert, index) => (
+                <motion.article
+                  key={cert.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.45,
+                    delay: (index % 4) * 0.05,
+                  }}
+                  className="border border-primary/20 bg-card/20 overflow-hidden"
+                >
+                  <div className="aspect-[4/3] bg-white overflow-hidden">
+                    <img
+                      src={cert.image}
+                      alt={cert.name}
+                      loading="lazy"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
-                  <h3 className="text-lg xl:text-xl font-medium leading-snug">
-                    {cert.name}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="p-5 border-t border-primary/20">
+                    <div className="flex justify-between items-center gap-3 mb-4">
+                      <span className="font-mono text-[10px] tracking-[0.2em] text-primary">
+                        CERT {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="font-mono text-[10px] tracking-[0.15em] text-muted-foreground">
+                        VERIFIED
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-medium leading-snug text-foreground">
+                      {cert.name}
+                    </h3>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
 };
-
-export default About;
