@@ -7,6 +7,9 @@ export type Experience = {
   id: string;
   role: string;
   company: string;
+
+  logo: string;
+
   period: string;
   location: string;
   bullets: string[];
