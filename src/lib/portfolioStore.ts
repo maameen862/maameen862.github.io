@@ -48,6 +48,9 @@ const ExperienceSchema = z.object({
   id: z.string(),
   role: z.string().max(200),
   company: z.string().max(200),
+
+  logo: safeUrl(3000000).optional().or(z.literal("")),
+
   period: z.string().max(100),
   location: z.string().max(200),
   bullets: z.array(z.string().max(1000)),
