@@ -48,12 +48,31 @@ export const Experience = () => {
 
                 {/* Right content column */}
                 <div className="md:col-span-8 md:border-l md:border-hairline md:pl-10">
-                  <h3 className="font-display text-3xl md:text-4xl leading-tight text-foreground">
-                    {exp.role}
-                  </h3>
-                  <div className="mt-2 font-display italic text-lg md:text-xl text-primary">
-                    {exp.company}
-                  </div>
+                  <div className="flex items-center gap-5">
+
+    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-card/50 backdrop-blur">
+
+        <img
+            src={exp.logo}
+            alt={exp.company}
+            className="h-12 w-12 object-contain"
+        />
+
+    </div>
+
+    <div>
+
+        <h3 className="font-display text-3xl md:text-4xl leading-tight text-foreground">
+            {exp.role}
+        </h3>
+
+        <div className="mt-2 font-display italic text-lg md:text-xl text-primary">
+            {exp.company}
+        </div>
+
+    </div>
+
+</div>
 
                   <ul className="mt-6 space-y-3 text-sm md:text-base text-foreground/80">
                     {exp.bullets.map((b, j) => (
