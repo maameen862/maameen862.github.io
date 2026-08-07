@@ -138,7 +138,11 @@ export const Contact = () => {
                     aria-hidden
                     className="absolute inset-0 rounded-2xl bg-primary/20 blur-lg"
                   />
-                  <Mail className="relative h-7 w-7 text-primary" strokeWidth={1.75} />
+                  <img
+    src="/logos/gmail.svg"
+    alt="Gmail"
+    className="relative h-10 w-10 object-contain"
+/>
                 </div>
 
                 <div>
