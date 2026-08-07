@@ -121,57 +121,33 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="mt-12"
         >
-          {/* Large email card */}
-          <motion.div
-            variants={itemVariants}
-            className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-card/60 p-8 backdrop-blur-xl transition-colors hover:border-primary/40 sm:p-10"
-          >
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary/25 blur-3xl transition-opacity duration-500 group-hover:opacity-80"
-            />
+          {/* Premium Email Card (replace your existing email card only) */}
+<motion.div
+  variants={itemVariants}
+  className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-card/60 p-8 backdrop-blur-xl hover:border-primary/40"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
+    <div>
+      <span className="text-xs uppercase tracking-[0.35em] text-primary font-semibold">EMAIL</span>
+      <h3 className="mt-3 text-3xl md:text-4xl font-display break-all">
+        {contact.email}
+      </h3>
+      <p className="mt-3 text-muted-foreground">
+        Open to opportunities, collaborations and Data Analyst roles.
+      </p>
+    </div>
 
-            <div className="relative flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
-              <div className="flex items-center gap-5">
-                <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 rounded-2xl bg-primary/20 blur-lg"
-                  />
-                  <img
-  src="/logos/gmail.svg"
-  alt="Gmail"
-  className="relative h-10 w-10 object-contain"
-/>
-                </div>
-
-                <div>
-                  <div className="text-xs uppercase tracking-[0.3em] text-primary">
-                    Email
-                  </div>
-                  <h3 className="mt-2 text-2xl font-display break-all sm:text-3xl">
-                    {contact.email}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Open to opportunities and collaborations
-                  </p>
-                </div>
-              </div>
-
-              <motion.a
-                href={`mailto:${contact.email}`}
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group/btn flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-primary px-7 py-3.5 font-medium text-primary-foreground shadow-lg shadow-primary/20 sm:w-auto"
-              >
-                <Mail className="h-4 w-4" />
-                Send Email
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-              </motion.a>
-            </div>
-          </motion.div>
-
+    <motion.a
+      href={`mailto:${contact.email}`}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.98 }}
+      className="rounded-xl bg-primary px-7 py-4 text-primary-foreground font-medium shadow-lg shadow-primary/20 transition"
+    >
+      Send Email →
+    </motion.a>
+  </div>
+</motion.div>
           {/* Five link cards */}
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {links.map((link) => (
