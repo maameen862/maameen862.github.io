@@ -78,4 +78,20 @@ export const Contact = () => {
   );
 };
 
-export default Contact;
+export const Footer = () => {
+  const { hero } = usePortfolio();
+
+  return (
+    <footer className="border-t border-hairline py-10">
+      <div className="container flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+          © {new Date().getFullYear()} {hero.name}
+        </p>
+
+        <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+          HYDERABAD, TELANGANA → INDIA
+        </p>
+      </div>
+    </footer>
+  );
+};
