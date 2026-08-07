@@ -119,10 +119,10 @@
     "period": "Jul 2025 — Jan 2026",
     "location": "Hyderabad",
     "bullets": [
-      "▸Analyzed large-scale banking datasets to uncover trends impacting loan performance and recovery rates",
-      "▸Built Power BI dashboards tracking KPIs across the loan lifecycle, enabling faster decision-making",
-      "▸Performed A/B testing that contributed to ~17% improvement in engagement",
-      "▸Optimized SQL queries for efficient data extraction across multiple tables"
+      "Analyzed large-scale banking datasets to uncover trends impacting loan performance and recovery rates",
+      "Built Power BI dashboards tracking KPIs across the loan lifecycle, enabling faster decision-making",
+      "Performed A/B testing that contributed to ~17% improvement in engagement",
+      "Optimized SQL queries for efficient data extraction across multiple tables"
     ]
   },
   {
