@@ -111,55 +111,59 @@
     }
   ],
   "experience": [
-    {
-      "id": "e1",
-      "role": "Data Analyst Intern",
-      "company": "Analytics Benchmark Trainings",
-      "period": "Jul 2025 — Jan 2026",
-      "location": "Hyderabad",
-      "bullets": [
-        "▸Analyzed large-scale banking datasets to uncover trends impacting loan performance and recovery rates",
-        "▸Built Power BI dashboards tracking KPIs across the loan lifecycle, enabling faster decision-making",
-        "▸Performed A/B testing that contributed to ~17% improvement in engagement",
-        "▸Optimized SQL queries for efficient data extraction across multiple tables"
-      ]
-    },
-    {
-      "id": "e2",
-      "role": "Technical Support Professional",
-      "company": "Foundever",
-      "period": "Apr 2024 — Jul 2025",
-      "location": "Hyderabad",
-      "bullets": [
-        "Resolved complex technical issues for global users across digital platforms.",
-        "Improved CSAT through efficient troubleshooting and clear communication.",
-        "Analyzed recurring issues and contributed to process improvements."
-      ]
-    },
-    {
-      "id": "e3",
-      "role": "Email & Chat Associate",
-      "company": "IntouchCX",
-      "period": "Feb 2023 — Feb 2024",
-      "location": "Hyderabad",
-      "bullets": [
-        "Provided real-time customer support resolving order and platform issues.",
-        "Maintained high response-time and satisfaction metrics."
-      ]
-    },
-    {
-      "id": "e4",
-      "role": "Senior Escalation Associate — Axis Bank Process",
-      "company": "Conneqt Business Solutions",
-      "period": "Aug 2021 — Dec 2022",
-      "location": "Hyderabad",
-      "bullets": [
-        "Handled critical banking escalations ensuring compliance and accuracy.",
-        "Conducted root-cause analysis for recurring issues.",
-        "Managed high-impact cases under strict SLA requirements."
-      ]
-    }
-  ],
+  {
+    "id": "e1",
+    "role": "Data Analyst Intern",
+    "company": "Analytics Benchmark Trainings",
+    "logo": "/logos/analytics-benchmark.png",
+    "period": "Jul 2025 — Jan 2026",
+    "location": "Hyderabad",
+    "bullets": [
+      "▸Analyzed large-scale banking datasets to uncover trends impacting loan performance and recovery rates",
+      "▸Built Power BI dashboards tracking KPIs across the loan lifecycle, enabling faster decision-making",
+      "▸Performed A/B testing that contributed to ~17% improvement in engagement",
+      "▸Optimized SQL queries for efficient data extraction across multiple tables"
+    ]
+  },
+  {
+    "id": "e2",
+    "role": "Technical Support Professional",
+    "company": "Foundever",
+    "logo": "/logos/foundever.png",
+    "period": "Apr 2024 — Jul 2025",
+    "location": "Hyderabad",
+    "bullets": [
+      "Resolved complex technical issues for global users across digital platforms.",
+      "Improved CSAT through efficient troubleshooting and clear communication.",
+      "Analyzed recurring issues and contributed to process improvements."
+    ]
+  },
+  {
+    "id": "e3",
+    "role": "Email & Chat Associate",
+    "company": "IntouchCX",
+    "logo": "/logos/intouchcx.png",
+    "period": "Feb 2023 — Feb 2024",
+    "location": "Hyderabad",
+    "bullets": [
+      "Provided real-time customer support resolving order and platform issues.",
+      "Maintained high response-time and satisfaction metrics."
+    ]
+  },
+  {
+    "id": "e4",
+    "role": "Senior Escalation Associate — Axis Bank Process",
+    "company": "Conneqt Business Solutions",
+    "logo": "/logos/conneqt.png",
+    "period": "Aug 2021 — Dec 2022",
+    "location": "Hyderabad",
+    "bullets": [
+      "Handled critical banking escalations ensuring compliance and accuracy.",
+      "Conducted root-cause analysis for recurring issues.",
+      "Managed high-impact cases under strict SLA requirements."
+    ]
+  }
+],
   "projects": [
     {
       "id": "wcigsjq",
